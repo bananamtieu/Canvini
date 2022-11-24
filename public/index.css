@@ -1,0 +1,39 @@
+main {
+    overflow: auto;
+}
+
+.announcement {
+    margin: var(--margin-md);
+    padding: var(--padding-md);
+    background: pink;
+    border: 1px solid red;
+    border-radius: var(--border-radius-lg);
+    color: red;
+}
+
+.charts {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#trend-chart-wrapper {
+    width: 50%;
+    margin: var(--margin-lg);
+}
+
+#course-chart-wrapper {
+    width: 30%;
+    margin: var(--margin-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+canvas {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 5px solid white;
+}

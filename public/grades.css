@@ -1,0 +1,92 @@
+main {
+    padding: var(--padding-sm);
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    display: flex;
+    flex-flow: column;
+    height: 85%;
+    margin: var(--margin-sm);
+    border-radius: var(--border-radius-md);
+    padding: var(--padding-sm);
+    background-color: #E5E4E2;
+}
+
+table thead {
+    font-weight: 600;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-bottom: 1px solid black;
+    margin-bottom: var(--margin-sm);
+    color: #5A5A5A;
+}
+
+table tbody {
+    overflow: auto;
+    flex-grow: 1;
+}
+
+tr {
+    display: flex;
+    width: 100%;
+    padding: var(--padding-sm);
+}
+
+tr th:first-child, tr td:first-child {
+    flex: 0 1 40%;
+}
+
+tr th:not(tr th:first-child), tr td:not(tr td:first-child) {
+    flex: 0 1 20%;
+}
+
+th {
+    position: relative;
+}
+
+th, td {
+    display: flex;
+    text-align: start;
+    align-items: center;
+}
+
+th .search-wrapper {
+    position: relative;
+}
+
+th .search-wrapper svg {
+    position: absolute;
+}
+
+th input {
+    border: 0;
+    background: inherit;
+    color: #5A5A5A;
+    padding: var(--padding-sm);
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+th input:hover {
+    background-color: white;
+}
+
+th button {
+    border: 0;
+    background: inherit;
+    color: #5A5A5A;
+    padding: var(--padding-sm);
+    font-weight: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+th button:hover {
+    background-color: #fafafa;
+}

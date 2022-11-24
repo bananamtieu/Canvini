@@ -1,0 +1,46 @@
+nav{
+    flex-basis: 20%;
+    background-color: var(--accent-color);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+nav h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    padding: var(--padding-lg);
+}
+
+nav li{
+    list-style: none;
+    border-bottom: 2px solid #8B0000;
+}
+
+nav li:hover{
+    background-color: #8B0000;
+}
+
+nav li a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: var(--padding-md);
+    padding-bottom: var(--padding-md);
+}
+
+nav li a .svg-wrapper {
+    flex: 0 0 40%;
+    padding-right: var(--padding-sm);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li a .svg-wrapper svg {
+    flex: 0 0 40%;
+    color: white;
+    height: 32px;
+}
