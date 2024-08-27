@@ -39,13 +39,12 @@ body, .calendar, .month-selector label {
 }
 
 .calendar caption {
-    order: 0;
-    text-align: center;
-    margin-top: var(--margin-md);
-    margin-bottom: var(--margin-md);
-    font-weight: 700;
-    font-size: 40px;
-    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif; /* Updated font stack */
+    font-size: 2rem; /* Adjust within the 2rem to 2.5rem range as needed */
+    font-weight: 700; /* Ensure the text is bold and stands out */
+    text-align: center; /* Centers the caption horizontally */
+    margin-top: var(--margin-md); /* Add some space above the caption */
+    margin-bottom: var(--margin-md); /* Add some space below the caption */
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif; /* Modern and clean font */
 }
 
 .calendar-wrapper {
@@ -71,108 +70,81 @@ body, .calendar, .month-selector label {
     text-align: center;
 }
 
-.calendar td span {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 4rem;
-}
-
 td:first-child, td:last-child {
     color: #ff4500;
 }
 
+td span {
+    display: inline-block; /* Ensure spans are inline-block */
+    vertical-align: middle;
+    width: 2.5ch;
+    height: 2.5ch;
+    line-height: 2.5ch;
+}
+
+span.quiz {
+    display: inline-block; /* Ensures the span behaves like a block element but only takes up the space it needs */
+    width: 2.5ch; /* Width equal to the height for a perfect circle */
+    height: 2.5ch; /* Height of the circle */
+    line-height: 2.5ch; /* Ensures the text is centered vertically */
+    background-color: #ff4500; /* Circle's background color */
+    text-align: center; /* Centers the text horizontally */
+    border-radius: 50%; /* Makes the shape a circle */
+}
+
+span.lab {
+    display: inline-block; /* Allows the span to take specific width and height */
+    position: relative; /* Ensures the pseudo-element is positioned relative to the span */
+    text-align: center; /* Centers the text horizontally */
+    line-height: 2.5ch; /* Centers the number vertically */
+}
+
+span.lab::after {
+    content: ""; /* Empty content for the decorative dot */
+    display: block; /* Ensures the dot takes up space */
+    width: 1ch; /* Width of the dot */
+    height: 1ch; /* Height of the dot */
+    background-color: #ff4500; /* Dot color */
+    border-radius: 50%; /* Makes the shape a circle */
+    position: absolute; /* Positions the dot relative to the span */
+    left: 50%; /* Centers the dot horizontally */
+    transform: translateX(-50%); /* Adjusts the dot back to be perfectly centered */
+    top: 100%; /* Positions the dot at the bottom of the span */
+    margin-top: 0.2ch; /* Adjusts the space between the number and the dot */
+}
+
+span.homework {
+    display: inline-block; /* Allows for width, height, and padding to be applied */
+    width: 2.5ch; /* Width equal to the height for a perfect circle */
+    height: 2.5ch; /* Height of the circle */
+    line-height: 2.5ch; /* Centers the text vertically */
+    border: 2px solid #ff4500; /* Creates the circle outline */
+    text-align: center; /* Centers the text horizontally */
+    border-radius: 50%; /* Makes the shape a circle */
+}
+
+span.office-hours {
+    display: inline-block; /* Allows for width, height, and padding to be applied */
+    border-bottom: 2px solid #ff4500; /* Creates the underline with the specified color and thickness */
+    padding-bottom: 0.1ch; /* Adds a bit of space between the number and the underline */
+}
+
 h2 {
-    margin: var(--margin-md);
-    font-weight: 400;
+    padding: var(--padding-sm);
 }
 
 .legend ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: var(--padding-sm);
     display: flex;
-    gap: 2ch;
+    gap: 5ch;
     align-items: center;
     background-color: #E5E4E2;
     border-radius: var(--border-radius-md);
     width: fit-content;
 }
 
-.legend li {
-    padding-left: var(--padding-lg);
-    padding-right: var(--padding-lg);
-    padding-top: var(--padding-md);
-    padding-bottom: var(--padding-md);
-    display: flex;
-    align-items: center;
-    gap: 0.5ch;
-    font-size: 1.2rem;
-}
-
 .legend li span {
-    position: relative;
-    z-index: 1;
-    display: inline-block;
     font-weight: bold;
 }
 
-span.quiz {
-    height: 2.5ch;
-    width: 2.5ch;
-    border-radius: var(--border-radius-lg);
-    background: #ff4500;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 2.5ch;
-    z-index: -1;
-}
-
-span.lab::after {
-    content: "";
-    height: 1ch;
-    width: 1ch;
-    background-color: #ff4500;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 2ch;
-}
-
-span.homework {
-    border: 2px solid #ff4500;
-    border-radius: var(--border-radius-md);
-    padding: 0.5ch 1ch;
-}
-
-span.office-hours {
-    border-bottom: 2px solid #ff4500;
-}
-
-td span p:nth-child(1) {
-    font-size: large;
-}
-
-td span p:nth-child(2) {
-    width: fit-content;
-    font-size: small;
-    color: black;
-}
-
-td span p.quiz {
-    background-color: #CBC3E3;
-}
-
-td span p.lab {
-    background-color: lightgoldenrodyellow;
-}
-
-td span p.homework {
-    background-color: #90EE90;
-}
-
-td span p.office-hours {
-    background-color: lightskyblue;
-}

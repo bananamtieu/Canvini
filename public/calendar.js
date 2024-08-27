@@ -21,23 +21,13 @@ function updateCalendar(calendar, month, events) {
             let currentcell = currentrow[j];
             let currentday = i*7 + j;
             if (currentday >= firstDayOfMonth && currentday <= (firstDayOfMonth + daysInMonth - 1)) {
+                let date = currentday - firstDayOfMonth + 1;
+                let event = events[date]; // Access the event for this date
+
                 let span = document.createElement('span');
-
-                let d = document.createElement('p');
-                d.innerHTML = `${currentday - firstDayOfMonth + 1}`;
-                span.appendChild(d);
-
-                let event = events[currentday - firstDayOfMonth + 1];
-                if (typeof event != "undefined") {
-                    let d_event = document.createElement('p');
-                    d_event.className = `${event.type}`;
-                    if (typeof event.description != "undefined") {
-                        d_event.innerHTML = `${event.description}`;
-                    }
-                    else {
-                        d_event.innerHTML = "Office hour";
-                    }
-                    span.appendChild(d_event);
+                span.textContent = `${date}`;
+                if (event) {
+                    span.className = `${event.type}`; // Set the class based on event type
                 }
                 currentcell.appendChild(span);
             }
@@ -71,6 +61,7 @@ function main() {
         default:
     }
     fetch(`/api/events/${stringMonth}`).then((response) => response.json()).then((eventData) => {
+        console.log('Fetched event data:', eventData); // Log the fetched event data
         blankCalendar(calendar);
         updateCalendar(calendar, month, eventData);
     })
