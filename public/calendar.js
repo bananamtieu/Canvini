@@ -48,17 +48,26 @@ function updateCalendar(calendar, month, events) {
 function main() {
     const calendar = document.querySelector('.calendar-wrapper tbody');
     let month = document.querySelector('input[name="month"]:checked').value;
+    let caption = document.querySelector('.calendar caption');
 
     let stringMonth = '';
     switch(month) {
         case '9':
-            stringMonth = 'september'; break;
+            stringMonth = 'september';
+            caption.textContent = `September ${year}`;
+            break;
         case '10':
-            stringMonth = 'october'; break;
+            stringMonth = 'october';
+            caption.textContent = `October ${year}`;
+            break;
         case '11':
-            stringMonth = 'november'; break;
+            stringMonth = 'november';
+            caption.textContent = `November ${year}`;
+            break;
         case '12':
-            stringMonth = 'december'; break;
+            stringMonth = 'december';
+            caption.textContent = `December ${year}`;
+            break;
         default:
     }
     fetch(`/api/events/${stringMonth}`).then((response) => response.json()).then((eventData) => {

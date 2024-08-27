@@ -1,25 +1,24 @@
+main {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+}
+
+body, .calendar, .month-selector label {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
 .wrapper {
     height: 100%;
     display: flex;
-    flex: 1 0 auto;
-}
-
-main {
-    display: flex;
-    flex-flow: column;
-    padding-left: 0;
-}
-
-h1 {
-    flex: 0 0 auto;
+    flex-direction: row; /* Ensure the month selector is to the left of the calendar */
 }
 
 .month-selector {
     display: flex;
-    box-sizing: content-box;
-    flex-flow: column;
+    flex-direction: column;
     flex: 0 0 20%;
-    position: relative;
     margin-top: var(--margin-lg);
     height: fit-content;
     border-top-right-radius: var(--border-radius-lg);
@@ -29,88 +28,92 @@ h1 {
 
 .month-selector label {
     padding: var(--padding-md);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1.2rem;
     cursor: pointer;
-    position: inherit;
     transition: all ease-in-out 0.1s;
 }
 
-.month-selector label.selected {
-    position: relative;
-    cursor: inherit;
-}
-
-.month-selector input {
-    margin-right: var(--margin-sm);
-}
-
 .calendar {
-    margin: var(--margin-lg);
-    flex: 1 0 auto;
+    margin: var(--margin-md);
+    flex: 1;
 }
 
 .calendar caption {
     order: 0;
-    text-align: start;
+    text-align: center;
     margin-top: var(--margin-md);
     margin-bottom: var(--margin-md);
     font-weight: 700;
-    text-transform: uppercase;
-    font-size: large;
+    font-size: 40px;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif; /* Updated font stack */
 }
 
 .calendar-wrapper {
     width: 100%;
+    border-collapse: collapse;
 }
 
-th {
+.calendar th {
     background-color: #A52A2A;
-    font-weight: 1500;
+    font-weight: 700; /* Valid font-weight */
     font-size: large;
     color: white;
     padding-top: var(--padding-sm);
     padding-bottom: var(--padding-sm);
+    text-align: center;
 }
 
-td {
+.calendar td {
     height: 4rem;
     width: 4rem;
     position: relative;
-    vertical-align: top;
+    vertical-align: middle;
+    text-align: center;
 }
 
-td span {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.calendar td span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 4rem;
 }
 
 td:first-child, td:last-child {
-    color:#ff4500;
+    color: #ff4500;
+}
+
+h2 {
+    margin: var(--margin-md);
+    font-weight: 400;
 }
 
 .legend ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
+    gap: 2ch;
+    align-items: center;
     background-color: #E5E4E2;
     border-radius: var(--border-radius-md);
     width: fit-content;
 }
 
-.legend ul li {
+.legend li {
     padding-left: var(--padding-lg);
     padding-right: var(--padding-lg);
     padding-top: var(--padding-md);
     padding-bottom: var(--padding-md);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.5ch;
     font-size: 1.2rem;
 }
 
-.legend ul li span {
+.legend li span {
     position: relative;
     z-index: 1;
     display: inline-block;
+    font-weight: bold;
 }
 
 span.quiz {
@@ -119,23 +122,29 @@ span.quiz {
     border-radius: var(--border-radius-lg);
     background: #ff4500;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 2.5ch;
     z-index: -1;
 }
 
 span.lab::after {
     content: "";
-    height: 0.5ch;
-    width: 0.5ch;
+    height: 1ch;
+    width: 1ch;
     background-color: #ff4500;
     border-radius: 50%;
     position: absolute;
-    left: 1ch;
-    top: 2.25ch;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2ch;
 }
 
 span.homework {
     border: 2px solid #ff4500;
     border-radius: var(--border-radius-md);
+    padding: 0.5ch 1ch;
 }
 
 span.office-hours {
@@ -144,7 +153,6 @@ span.office-hours {
 
 td span p:nth-child(1) {
     font-size: large;
-    font-weight: 800;
 }
 
 td span p:nth-child(2) {
@@ -168,4 +176,3 @@ td span p.homework {
 td span p.office-hours {
     background-color: lightskyblue;
 }
-
