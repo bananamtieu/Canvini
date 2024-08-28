@@ -1,11 +1,24 @@
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
 main {
     overflow: auto;
+    padding: var(--padding-sm);
+}
+
+h1 {
+    font-size: 2rem; /* Adjust within the 2rem to 2.5rem range as needed */
+    font-weight: 700; /* Ensure the text is bold and stands out */
+    text-align: center; /* Centers the caption horizontally */
+    margin-top: var(--margin-md); /* Add some space above the caption */
+    margin-bottom: var(--margin-md); /* Add some space below the caption */
 }
 
 .announcement {
     margin: var(--margin-md);
     padding: var(--padding-md);
-    background: pink;
+    background: #FFC0CB;
     border: 1px solid red;
     border-radius: var(--border-radius-lg);
     color: red;

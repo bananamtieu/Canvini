@@ -1,46 +1,59 @@
-nav{
+/* Navigation Bar Styling */
+nav {
     flex-basis: 20%;
     background-color: var(--accent-color);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the h1 and other elements vertically */
+    justify-content: flex-start; /* Starts items at the top, can adjust if needed */
 }
 
-nav h1{
+/* Logo Styling */
+nav h1 {
     text-align: center;
+    color: white; /* White text for the logo */
     font-weight: 700;
-    font-size: 40px;
-    padding: var(--padding-lg);
+    font-size: 2.5rem;
+    margin: var(--margin-lg);
+    width: 100%; /* Ensures h1 takes full width of the container */
 }
 
-nav li{
-    list-style: none;
-    border-bottom: 2px solid #8B0000;
+/* Navigation List Item Styling */
+nav li {
+    list-style-type: none; /* Removes default list styling */
+    border-bottom: 2px solid var(--accent-color-deep);
+    width: 100%; /* Ensure li takes full width */
 }
 
-nav li:hover{
-    background-color: #8B0000;
-}
-
-nav li a{
-    text-decoration: none;
-    color: white;
-    display: flex;
+nav li a {
+    display: flex; /* Make sure it's a flexbox for proper alignment */
+    padding: var(--padding-md);
     align-items: center;
-    width: 100%;
-    padding-top: var(--padding-md);
-    padding-bottom: var(--padding-md);
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* White text for links */
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 100%; /* Make the link take up full width */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    border-radius: 8px; /* Rounds the corners of the menu items */
+    transition: background-color 0.3s ease;
 }
 
-nav li a .svg-wrapper {
-    flex: 0 0 40%;
-    padding-right: var(--padding-sm);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+nav li a:hover {
+    background-color: var(--accent-color-deep);
 }
 
-nav li a .svg-wrapper svg {
-    flex: 0 0 40%;
-    color: white;
-    height: 32px;
+/* SVG Wrapper Styling */
+.svg-wrapper {
+    width: 24px; /* Ensures SVG icons are a consistent size */
+    height: 24px;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* SVG Icon Styling */
+.svg-wrapper svg {
+    fill: none;
+    stroke: white; /* White stroke color for the icons */
+    stroke-width: 1.5;
 }

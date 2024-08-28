@@ -12,7 +12,7 @@ function createGradeByWeekChart(){
                 label: 'Line Dataset',
                 data: [65, 59, 80, 81, 57, 55, 40, 65, 70, 79],
                 fill: false,
-                borderColor: 'rgba(165, 42, 42)',
+                borderColor: 'rgba(142, 68, 173)',
             }, {
                 type: 'line',
                 label: 'Line Dataset',
@@ -52,8 +52,8 @@ function createPointsInClassChart(){
               label: 'My First Dataset',
               data: [40, 60],
               backgroundColor: [
-                'rgba(165, 42, 42, 1.0)',
-                'rgba(165, 42, 42, 0.5)'
+                'rgba(142, 68, 173, 0.8)',
+                'rgba(203, 195, 227, 0.8)'
               ],
               hoverOffset: 4
             }]
@@ -88,12 +88,12 @@ function createPointsByCategoryChart(){
             {
                 label: "Earned",
                 data: [65, 59, 80, 81, 56, 55, 40],
-                backgroundColor: "rgba(165, 42, 42, 1.0)",
+                backgroundColor: "rgba(142, 68, 173, 0.8)",
             },
             {
                 label: "Missed",
                 data: [65, 59, 80, 81, 56, 55, 40],
-                backgroundColor: "rgba(165, 42, 42, 0.5)",
+                backgroundColor: "rgba(203, 195, 227, 0.8)",
             },
             {
                 label: "Ungraded",

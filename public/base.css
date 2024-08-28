@@ -4,7 +4,9 @@
 }
 
 body{
-    --accent-color: brown;
+    --accent-color: #8e44ad;
+    --accent-color-deep: #732d91;
+    --smu-blue: #0039a6;
 
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
