@@ -42,9 +42,9 @@ main h1 {
 }
 
 /* Grades Table Styling */
-input, button, th {
+input, button, table.grades th:last-child {
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: normal;
 }
 
 table.grades {
